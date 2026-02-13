@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#2D572C",
+              "accent-green": "#13ec5b",
+              "light-gray": "#F3F4F6",
+              "sidebar-bg": "#FFFFFF",
+            },
+            fontFamily: {
+              "display": ["Work Sans", "sans-serif"]
+            },
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+      @layer base {
+        body { @apply font-display text-slate-800 bg-gray-50; }
+      }
+      .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+      .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+      .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 10px; }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="flex flex-col h-screen overflow-hidden">
+<header class="bg-[#2D572C] h-20 flex-shrink-0 flex items-center px-8 z-50 w-full">
+<div class="flex items-center flex-shrink-0 mr-12">
+<div class="text-white font-bold text-3xl tracking-tighter flex items-center">
+<span class="bg-accent-green text-[#2D572C] px-2 py-0.5 rounded-sm mr-1">S</span>
+<span>MARKET</span>
+</div>
+</div>
+<div class="flex-grow flex justify-center max-w-4xl mx-auto">
+<div class="relative w-full">
+<input class="w-full bg-[#F3F4F6] border-none text-slate-900 placeholder-slate-500 rounded-lg py-3 pl-12 pr-4 focus:ring-2 focus:ring-accent-green transition-all" placeholder="Busca en miles de productos..." type="text"/>
+<span class="material-icons absolute left-4 top-1/2 -translate-y-1/2 text-slate-500">search</span>
+</div>
+</div>
+<div class="flex items-center gap-8 text-white flex-shrink-0 ml-12">
+<div class="flex items-center gap-1 cursor-pointer hover:text-accent-green transition-colors font-bold text-sm">
+<span>ES</span>
+<span class="material-icons text-lg">expand_more</span>
+</div>
+<div class="flex items-center gap-2 cursor-pointer hover:text-accent-green transition-colors">
+<span class="material-icons text-2xl">person_outline</span>
+<span class="text-sm font-bold">Identifícate</span>
+</div>
+<div class="flex items-center gap-3 bg-white/10 hover:bg-white/20 px-5 py-2.5 rounded-lg cursor-pointer transition-colors border border-white/10">
+<div class="relative">
+<span class="material-icons text-2xl">shopping_cart</span>
+<span class="absolute -top-2 -right-2 bg-accent-green text-[#2D572C] text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">0</span>
+</div>
+<span class="text-sm font-bold">0,00€</span>
+</div>
+</div>
+</header>
+<div class="bg-light-gray h-10 flex-shrink-0 flex items-center px-8 text-xs text-slate-500 border-b border-gray-200">
+<div class="flex items-center gap-2">
+<span class="hover:text-primary cursor-pointer">Home</span>
+<span class="material-icons text-[14px]">chevron_right</span>
+<span class="hover:text-primary cursor-pointer">Marketplace</span>
+<span class="material-icons text-[14px]">chevron_right</span>
+<span class="text-primary font-bold">Fruta</span>
+</div>
+</div>
+<div class="flex flex-grow overflow-hidden">
+<aside class="w-[250px] bg-sidebar-bg border-r border-gray-200 flex flex-col flex-shrink-0 overflow-y-auto custom-scrollbar">
+<div class="p-4 border-b border-gray-100">
+<h2 class="font-bold text-gray-900 flex items-center gap-2">
+<span class="material-icons text-primary">category</span>
+                    Categorías
+                </h2>
+</div>
+<nav class="flex flex-col py-2">
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-orange-500 text-xl">apple</span>
+<span class="text-sm font-medium text-gray-700">Fruta</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-green-500 text-xl">eco</span>
+<span class="text-sm font-medium text-gray-700">Verdura</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-red-600 text-xl">restaurant</span>
+<span class="text-sm font-medium text-gray-700">Carne</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-blue-400 text-xl">set_meal</span>
+<span class="text-sm font-medium text-gray-700">Pescado</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-yellow-500 text-xl">egg</span>
+<span class="text-sm font-medium text-gray-700">Lácteos y Huevos</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-amber-700 text-xl">bakery_dining</span>
+<span class="text-sm font-medium text-gray-700">Panadería</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-blue-500 text-xl">local_drink</span>
+<span class="text-sm font-medium text-gray-700">Bebidas</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-purple-500 text-xl">wine_bar</span>
+<span class="text-sm font-medium text-gray-700">Bodega</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-cyan-500 text-xl">cleaning_services</span>
+<span class="text-sm font-medium text-gray-700">Limpieza</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-pink-400 text-xl">face</span>
+<span class="text-sm font-medium text-gray-700">Perfumería</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-orange-400 text-xl">pets</span>
+<span class="text-sm font-medium text-gray-700">Mascotas</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+<a class="flex items-center justify-between px-4 py-2.5 hover:bg-gray-50 group" href="#">
+<div class="flex items-center gap-3">
+<span class="material-icons text-indigo-500 text-xl">ac_unit</span>
+<span class="text-sm font-medium text-gray-700">Congelados</span>
+</div>
+<span class="material-icons text-gray-300 text-sm group-hover:text-primary">chevron_right</span>
+</a>
+</nav>
+</aside>
+<main class="flex-grow overflow-y-auto custom-scrollbar p-8">
+<div class="max-w-7xl mx-auto space-y-8">
+<section>
+<div class="flex items-center justify-between mb-6">
+<div class="flex items-center gap-4">
+<h2 class="text-2xl font-extrabold uppercase tracking-tight text-slate-900">
+                                Ofertas <span class="text-red-600">FLASH</span>
+</h2>
+<div class="flex items-center gap-2 bg-red-600 text-white px-3 py-1 rounded-md text-sm font-bold">
+<span class="material-icons text-sm animate-pulse">timer</span>
+<span>08 : 45 : 12</span>
+</div>
+</div>
+<a class="text-primary font-bold hover:underline flex items-center gap-1" href="#">
+                            Ver todas las ofertas
+                            <span class="material-icons">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-4 gap-6">
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md border border-gray-100 transition-all flex flex-col h-full group">
+<div class="relative pt-[100%]">
+<img alt="Salmón" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0a2VEu5FQl6qdrDoy-hlsb4mEaoG7yk7wfnKIyUUIn5U-OEizINfFE6i9LniN1O4kS03W9P0MSNm0EGNOXcY9zpZjvRrBawJHMZTI5omhakpndJplXQkEQ6gxbcuBvFNGTrYXwlTseTl4V4PMB8wS8fFMkUesAkKEEOsMNB6GaywXVhJtwITlJ4dpi-ZJIOjQbSLq0cb8HMza2ftZmQmVeSRTlGng9zAZGDWrgvl4r7QhgUfCyehmQ4WmSRiZt3qVWufyGOQ89J3P"/>
+<div class="absolute top-3 left-3 bg-orange-500 text-white text-[11px] font-bold px-2 py-1 rounded shadow-sm">
+                                    Menos de 22h
+                                </div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="flex items-center gap-0.5 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="text-slate-400 text-xs ml-1">(42)</span>
+</div>
+<h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2">Lomos de Salmón Noruego Premium Fresco - 500g</h3>
+<div class="mt-auto">
+<div class="flex flex-col mb-4">
+<span class="text-xs text-slate-400 line-through">22,50€</span>
+<span class="text-2xl font-bold text-slate-900">18,99€</span>
+</div>
+<button class="w-full bg-accent-green hover:bg-[#11d652] text-primary font-bold py-2.5 rounded flex items-center justify-center gap-2 transition-colors">
+<span class="material-icons">shopping_cart</span>
+                                        Añadir
+                                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md border border-gray-100 transition-all flex flex-col h-full group">
+<div class="relative pt-[100%]">
+<img alt="Aceite" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJ4Tzh_ns7T5KlhYji2Hyl8egIt85dxYlcLSGu5o2tSc63QNsQ0Ci05qMRI7YfgVNnayYqMS2qBYmXWoffvFYEF0ow312r23PKv7Wl6-nbI43UiTh72qQn8YT6mnbAwDsZ9xaTxRHgte-SNdCK4EBw_lYZWnOzzyWd9GDi77c7qM_sjlPi_-kYSgvhW7FLY2sMbtUEDzJKU-V5YeQflUVYeETLWee1Cnbev3P_u8tKfOQwukCj8-Ogx0qa85GAx1orJTgYFru5Hgpb"/>
+<div class="absolute top-3 left-3 bg-orange-500 text-white text-[11px] font-bold px-2 py-1 rounded shadow-sm">
+                                    Menos de 22h
+                                </div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="flex items-center gap-0.5 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="text-slate-400 text-xs ml-1">(128)</span>
+</div>
+<h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2">Aceite de Oliva Virgen Extra Ecológico 1L</h3>
+<div class="mt-auto">
+<div class="flex flex-col mb-4">
+<span class="text-xs text-slate-400 line-through">14,90€</span>
+<span class="text-2xl font-bold text-slate-900">11,25€</span>
+</div>
+<button class="w-full bg-accent-green hover:bg-[#11d652] text-primary font-bold py-2.5 rounded flex items-center justify-center gap-2 transition-colors">
+<span class="material-icons">shopping_cart</span>
+                                        Añadir
+                                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md border border-gray-100 transition-all flex flex-col h-full group">
+<div class="relative pt-[100%]">
+<img alt="Pollo" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfmitlJuXkzxx8Ll93gWDRhc4Nk_vzWl1lquu0O7qXQQ0aaV8E3Clsn3Cp5DBZ_mdKSxBkL0YK5mGWYJ3P_F7ldbrZthPcA91FZZ_KX5woHpRvm-J82G0UWnCzLmHPXEjj8B8KXCKDA8Blko1ueda1lpHMz__XCEcya81Um_U14K_7XZuGAOfQqwR3K_7U89HkAqIuwvQ6kqKpza4ZEp37u1wBtQ64m7ekSxw4-Z0KocgnWn5dH_AwddtOam9LPIQpWSHhtkyY3dD2"/>
+<div class="absolute top-3 left-3 bg-orange-500 text-white text-[11px] font-bold px-2 py-1 rounded shadow-sm">
+                                    Menos de 22h
+                                </div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="flex items-center gap-0.5 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm text-gray-300">star</span>
+<span class="text-slate-400 text-xs ml-1">(89)</span>
+</div>
+<h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2">Pechuga de Pollo de Corral 1kg</h3>
+<div class="mt-auto">
+<div class="flex flex-col mb-4">
+<span class="text-xs text-slate-400 line-through">9,50€</span>
+<span class="text-2xl font-bold text-slate-900">6,95€</span>
+</div>
+<button class="w-full bg-accent-green hover:bg-[#11d652] text-primary font-bold py-2.5 rounded flex items-center justify-center gap-2 transition-colors">
+<span class="material-icons">shopping_cart</span>
+                                        Añadir
+                                    </button>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md border border-gray-100 transition-all flex flex-col h-full group">
+<div class="relative pt-[100%]">
+<img alt="Aguacates" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVj80SPWo_G3yjS5U8i5o1m-WK4MH3_n4kA8KmDNPwCYxKad3rZFFKXX-hY8O2lHqrKX_3RJ4TPA6AvToT6Ov_72FEn6AOCYe0cE85EBPffx0oAi6sq-iqDRnQy7yQFZ5Wphp_kRHzAygnt0tx9e6IrxCq_B_QATR6UNm9N--l9eoOr2bmSC7Bt0w_W74V7JnbTZmqYly7v__HdsXhTFSCnrxq5peLu1dioe8a-pCjD3jEq2VC0ObFLcEgzvfMIk-HQusW3hSHIx1E"/>
+<div class="absolute top-3 left-3 bg-orange-500 text-white text-[11px] font-bold px-2 py-1 rounded shadow-sm">
+                                    Menos de 22h
+                                </div>
+</div>
+<div class="p-4 flex-grow flex flex-col">
+<div class="flex items-center gap-0.5 text-yellow-400 mb-1">
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="material-icons text-sm">star</span>
+<span class="text-slate-400 text-xs ml-1">(210)</span>
+</div>
+<h3 class="text-sm font-semibold text-gray-800 mb-2 line-clamp-2">Aguacate Hass Premium Calibre Grande 2uds</h3>
+<div class="mt-auto">
+<div class="flex flex-col mb-4">
+<span class="text-xs text-slate-400 line-through">4,20€</span>
+<span class="text-2xl font-bold text-slate-900">2,99€</span>
+</div>
+<button class="w-full bg-accent-green hover:bg-[#11d652] text-primary font-bold py-2.5 rounded flex items-center justify-center gap-2 transition-colors">
+<span class="material-icons">shopping_cart</span>
+                                        Añadir
+                                    </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-2 gap-6">
+<div class="bg-primary/10 rounded-xl p-6 flex items-center justify-between border border-primary/20">
+<div>
+<h3 class="text-lg font-bold text-primary">Envío Gratis</h3>
+<p class="text-sm text-slate-600">En tu primer pedido superior a 40€</p>
+<button class="mt-4 px-6 py-2 bg-primary text-white text-sm font-bold rounded-md">Saber más</button>
+</div>
+<span class="material-icons text-6xl text-primary/40">local_shipping</span>
+</div>
+<div class="bg-yellow-100 rounded-xl p-6 flex items-center justify-between border border-yellow-200">
+<div>
+<h3 class="text-lg font-bold text-yellow-800">Gana 10€</h3>
+<p class="text-sm text-slate-600">Invita a un amigo y ambos ganaréis saldo</p>
+<button class="mt-4 px-6 py-2 bg-yellow-600 text-white text-sm font-bold rounded-md">Invitar</button>
+</div>
+<span class="material-icons text-6xl text-yellow-600/40">card_giftcard</span>
+</div>
+</section>
+</div>
+</main>
+</div>
+
+</body></html>
