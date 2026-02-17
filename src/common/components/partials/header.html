@@ -1,0 +1,53 @@
+<header>
+  <div
+    class="max-w-[1600px] mx-auto px-4 h-20 flex items-center justify-between gap-8"
+  >
+    <div class="flex items-center gap-2">
+      <div class="bg-primary p-2 rounded-xl">
+        <span class="material-icons-round text-white text-2xl"
+          >shopping_basket</span
+        >
+      </div>
+      <span
+        class="text-2xl font-bold font-display tracking-tight text-slate-900 dark:text-white"
+        >Floops</span
+      >
+    </div>
+    <div class="flex-1 max-w-2xl relative">
+      <input
+        class="w-full pl-12 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-primary/50 text-sm transition-all outline-none"
+        placeholder="Busca productos, marcas y más..."
+        type="text"
+      />
+      <span
+        class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
+        >search</span
+      >
+    </div>
+    <div class="flex items-center gap-4">
+      <button
+        class="p-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all"
+        onclick="toggleDarkMode()"
+      >
+        <span class="material-icons-round dark:hidden">dark_mode</span>
+        <span class="material-icons-round hidden dark:block">light_mode</span>
+      </button>
+      <button
+        class="flex items-center gap-2 px-4 py-2.5 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all font-medium"
+      >
+        <span class="material-icons-round">person_outline</span>
+        <span>Mi Cuenta</span>
+      </button>
+      <button
+        class="relative bg-primary hover:bg-orange-600 text-white p-2.5 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center gap-2 px-4"
+      >
+        <span class="material-icons-round">shopping_cart</span>
+        <span class="font-semibold">Carrito</span>
+        <span
+          class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900"
+          >3</span
+        >
+      </button>
+    </div>
+  </div>
+</header>

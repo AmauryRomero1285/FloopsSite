@@ -1,0 +1,554 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Floops - Carnes y Pescados</title>
+    <!--Tailwind-->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <!--Google fonts & icons-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!--Local config-->
+    <link rel="stylesheet" href="../common/css/global.css" />
+    <script src="../../common/js/tailwindConfig.js"></script>
+    <script src="../../common/js/theme.js"></script>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300"
+  >
+    <a
+      class="fixed bottom-8 right-8 z-[60] bg-[#25D366] text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-transform flex items-center justify-center"
+      href="#"
+    >
+      <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        ></path>
+      </svg>
+    </a>
+    <div
+    id="header"
+      class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300"
+    >
+    </div>
+    <div class="max-w-[1600px] mx-auto w-full flex-1 flex gap-8 px-4 py-6">
+      <aside class="w-72 flex-shrink-0">
+        <nav class="sticky top-28 space-y-2"><div id="sidebar"></div></nav>
+      </aside>
+      <main class="flex-1 min-w-0">
+        <div id="breadcrumb"></div>
+        <section class="mb-10 relative rounded-[2.5rem] overflow-hidden group">
+          <img
+            alt="Carnes y Pescados Frescos"
+            class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNiEkTfYxlJLwTpKa0qMjwxyyK6vllduSJ2gU1SpWOutrW-eh3hAEAt7OcDaLZqiXSoYCaGRgVU7B-BaFceH5ie8Bxbm4swTFuXhyn7RWEiSIoMKn0AJWom91kPTYHu-UdlX3YW15TMgNTFyhRMfRtEBydCd9dLpFoYExVf44Kj7OoHUmD6BTvb3dBn_6wQ243L2c4-JMCKvVxlnXBnVWDVid_LuDECRWEMkHkCZa9qbk1CSp1YIxDlLpmZVG4Tmwo9RGyaS7usQ"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-r from-slate-900/80 via-slate-900/40 to-transparent"
+          ></div>
+          <div class="relative z-10 px-16 py-20 max-w-2xl">
+            <div
+              class="inline-flex items-center gap-2 px-3 py-1 bg-secondary text-white rounded-full text-[10px] font-bold uppercase tracking-wider mb-6"
+            >
+              <span class="material-symbols-outlined text-xs"
+                >check_circle</span
+              >
+              Calidad Garantizada
+            </div>
+            <h1
+              class="text-5xl font-display font-bold text-white leading-tight mb-6"
+            >
+              Carnes y Pescados Frescos – Calidad Garantizada
+            </h1>
+            <p class="text-slate-100 mb-10 text-lg leading-relaxed">
+              Cortes diarios seleccionados, carnes de proveedores locales y
+              pescados frescos, listos para tu mesa.
+            </p>
+          </div>
+        </section>
+        <section class="mb-12">
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group cursor-pointer overflow-hidden relative"
+            >
+              <div class="relative z-10">
+                <h3 class="font-bold text-xl mb-3 dark:text-white">
+                  Carnes Rojas
+                </h3>
+                <ul
+                  class="text-sm text-slate-500 dark:text-slate-400 space-y-1"
+                >
+                  <li>Res: bistec, molida</li>
+                  <li>Arrachera premium</li>
+                </ul>
+              </div>
+              <span
+                class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-red-500/10 group-hover:scale-110 transition-transform"
+                >restaurant</span
+              >
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group cursor-pointer overflow-hidden relative"
+            >
+              <div class="relative z-10">
+                <h3 class="font-bold text-xl mb-3 dark:text-white">
+                  Carnes Blancas
+                </h3>
+                <ul
+                  class="text-sm text-slate-500 dark:text-slate-400 space-y-1"
+                >
+                  <li>Pollo entero, pechuga</li>
+                  <li>Pavo seleccionado</li>
+                </ul>
+              </div>
+              <span
+                class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-orange-500/10 group-hover:scale-110 transition-transform"
+                >egg</span
+              >
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group cursor-pointer overflow-hidden relative"
+            >
+              <div class="relative z-10">
+                <h3 class="font-bold text-xl mb-3 dark:text-white">Cerdo</h3>
+                <ul
+                  class="text-sm text-slate-500 dark:text-slate-400 space-y-1"
+                >
+                  <li>Costilla ahumada</li>
+                  <li>Chuletas de centro</li>
+                </ul>
+              </div>
+              <span
+                class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-pink-500/10 group-hover:scale-110 transition-transform"
+                >outdoor_grill</span
+              >
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 rounded-3xl p-6 border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group cursor-pointer overflow-hidden relative"
+            >
+              <div class="relative z-10">
+                <h3 class="font-bold text-xl mb-3 dark:text-white">
+                  Pescados y Mariscos
+                </h3>
+                <ul
+                  class="text-sm text-slate-500 dark:text-slate-400 space-y-1"
+                >
+                  <li>Salmón, camarón</li>
+                  <li>Filetes del día</li>
+                </ul>
+              </div>
+              <span
+                class="material-symbols-outlined absolute -right-4 -bottom-4 text-8xl text-blue-500/10 group-hover:scale-110 transition-transform"
+                >set_meal</span
+              >
+            </div>
+          </div>
+        </section>
+        <section
+          class="bg-white dark:bg-slate-800 rounded-2xl p-4 mb-8 border border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-4"
+        >
+          <div class="flex items-center gap-6">
+            <div class="flex items-center gap-2">
+              <span
+                class="text-sm font-bold text-slate-400 uppercase tracking-wide"
+                >Ordenar:</span
+              >
+              <select
+                class="bg-slate-50 dark:bg-slate-900 border-none text-sm font-medium rounded-xl focus:ring-primary/20 cursor-pointer"
+              >
+                <option>Popularidad</option>
+                <option>Precio: Menor a Mayor</option>
+                <option>Precio: Mayor a Menor</option>
+              </select>
+            </div>
+            <div class="flex items-center gap-2">
+              <span
+                class="text-sm font-bold text-slate-400 uppercase tracking-wide"
+                >Indicador:</span
+              >
+              <div
+                class="flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 text-secondary rounded-xl text-xs font-bold border border-secondary/20"
+              >
+                <span
+                  class="w-2 h-2 bg-secondary rounded-full animate-pulse"
+                ></span>
+                Frescura 100% Garantizada
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-2 text-slate-400">
+            <span class="text-xs font-medium">Mostrando 24 productos</span>
+          </div>
+        </section>
+        <section
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16"
+        >
+          <div
+            class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all group flex flex-col h-full"
+          >
+            <div
+              class="relative overflow-hidden h-56 bg-slate-100 dark:bg-slate-700"
+            >
+              <img
+                alt="Arrachera"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNiEkTfYxlJLwTpKa0qMjwxyyK6vllduSJ2gU1SpWOutrW-eh3hAEAt7OcDaLZqiXSoYCaGRgVU7B-BaFceH5ie8Bxbm4swTFuXhyn7RWEiSIoMKn0AJWom91kPTYHu-UdlX3YW15TMgNTFyhRMfRtEBydCd9dLpFoYExVf44Kj7OoHUmD6BTvb3dBn_6wQ243L2c4-JMCKvVxlnXBnVWDVid_LuDECRWEMkHkCZa9qbk1CSp1YIxDlLpmZVG4Tmwo9RGyaS7usQ"
+              />
+              <span
+                class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase shadow-lg"
+                >Fresco hoy</span
+              >
+              <button
+                class="absolute top-4 right-4 p-2.5 bg-white/90 dark:bg-slate-900/90 backdrop-blur rounded-2xl text-slate-400 hover:text-red-500 transition-colors shadow-lg"
+              >
+                <span class="material-symbols-outlined">favorite</span>
+              </button>
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <p
+                class="text-xs text-primary font-bold mb-2 uppercase tracking-wide"
+              >
+                Carnes Rojas
+              </p>
+              <h3
+                class="font-bold text-slate-800 dark:text-white mb-3 text-lg leading-snug"
+              >
+                Arrachera de Res Marinada Premium (500g)
+              </h3>
+              <div class="mt-auto">
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span
+                    class="text-2xl font-bold text-slate-900 dark:text-white"
+                    >8,99€</span
+                  >
+                  <span
+                    class="text-[10px] text-slate-500 ml-auto uppercase font-bold"
+                    >Pack</span
+                  >
+                </div>
+                <button
+                  class="w-full py-4 bg-secondary/10 text-secondary hover:bg-secondary hover:text-white transition-all rounded-2xl font-bold flex items-center justify-center gap-2"
+                >
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >
+                  Añadir
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all group flex flex-col h-full"
+          >
+            <div
+              class="relative overflow-hidden h-56 bg-slate-100 dark:bg-slate-700"
+            >
+              <img
+                alt="Pechuga de Pollo"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMVNGTS3hisq9oWapET-Qljf8zx5-pBZ6B2Dieikq2g-q0JhMkoKvYt0H9s-noqcF09IIKQGbPVYVsr3J2UfITRzTiQnO544gCbEd8GWZ1-6jTCePcJGGbBBFcAAwlriPUJu9c3ZdG9-dDfFOFkL4n8X_bViYvJ5wFF_9qSSRp8wsUA-0aPVHrwETpGcbD8QOpLJstzZO7Q3pRZRukCoF1I6BaZe7pU6rpEG_Wiom2dv6Zmp-MjFm_VNHofmAUDq_QBOfTKOoo8Q"
+              />
+              <span
+                class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase shadow-lg"
+                >Fresco hoy</span
+              >
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <p
+                class="text-xs text-primary font-bold mb-2 uppercase tracking-wide"
+              >
+                Carnes Blancas
+              </p>
+              <h3
+                class="font-bold text-slate-800 dark:text-white mb-3 text-lg leading-snug"
+              >
+                Pechuga de Pollo de Corral sin Piel (1kg)
+              </h3>
+              <div class="mt-auto">
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span
+                    class="text-2xl font-bold text-slate-900 dark:text-white"
+                    >9,50€</span
+                  >
+                  <span
+                    class="text-[10px] text-slate-500 ml-auto uppercase font-bold"
+                    >Kilo</span
+                  >
+                </div>
+                <button
+                  class="w-full py-4 bg-secondary/10 text-secondary hover:bg-secondary hover:text-white transition-all rounded-2xl font-bold flex items-center justify-center gap-2"
+                >
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >
+                  Añadir
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all group flex flex-col h-full"
+          >
+            <div
+              class="relative overflow-hidden h-56 bg-slate-100 dark:bg-slate-700"
+            >
+              <img
+                alt="Filete de Salmón"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB__0HdJrcp7XBKkGu7oAO1ZTS9PhnyzNDJYKA1a3G3xI3v77DlRnZS_Me7H1td4C61reENR103UglMOgca7hCURWYWYTFHFtVPJ-sLBQprxmHi5yVrZJAtZeOuzlnU3QONx3JU4LzAtI9DzLnvXJ_1CkPMlNYDSA0qFKRH9TN1amo0HQrfWPyYebnMaR85jtYQTPrZnilexUV2kO67ftqlZ0fX-pir0iJZLnrdY4w4A9DRKr47QxbDaQ_cDHPeT6AVvksvXqgnzg"
+              />
+              <span
+                class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase shadow-lg"
+                >Fresco hoy</span
+              >
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <p
+                class="text-xs text-primary font-bold mb-2 uppercase tracking-wide"
+              >
+                Pescados
+              </p>
+              <h3
+                class="font-bold text-slate-800 dark:text-white mb-3 text-lg leading-snug"
+              >
+                Lomo de Salmón Noruego Fresco (250g)
+              </h3>
+              <div class="mt-auto">
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span
+                    class="text-2xl font-bold text-slate-900 dark:text-white"
+                    >6,75€</span
+                  >
+                  <span
+                    class="text-[10px] text-slate-500 ml-auto uppercase font-bold"
+                    >Unidad</span
+                  >
+                </div>
+                <button
+                  class="w-full py-4 bg-secondary/10 text-secondary hover:bg-secondary hover:text-white transition-all rounded-2xl font-bold flex items-center justify-center gap-2"
+                >
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >
+                  Añadir
+                </button>
+              </div>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-800 rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-2xl transition-all group flex flex-col h-full"
+          >
+            <div
+              class="relative overflow-hidden h-56 bg-slate-100 dark:bg-slate-700"
+            >
+              <img
+                alt="Costilla Cerdo"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAOpWOGrWNCAD2AT7pt8uNN6zlqEB2tzdph_tKjR349HnSjeOROiF0SFkY7S1t8QGwLpBcWHTxRPj4Rltuq7d9wednAN_HPvUdUPpwUbRiBO4DGcHis_T0UPI0bfqeRcwXdYe3DXqtq9zBHFavdTT20y5OqnHLX1Ttt9WESOjXBzCoBEZvL1rP-nwbPu6zKe5cJLHpt2FA-X6VizpJF0sMK3WxB3G0TYbAEMcPxmQTUay95MMC7solPdZ4hh0Gp7-IFyytnSwCVuw"
+              />
+              <span
+                class="absolute top-4 left-4 bg-secondary text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase shadow-lg"
+                >Oferta</span
+              >
+            </div>
+            <div class="p-6 flex flex-col flex-1">
+              <p
+                class="text-xs text-primary font-bold mb-2 uppercase tracking-wide"
+              >
+                Cerdo
+              </p>
+              <h3
+                class="font-bold text-slate-800 dark:text-white mb-3 text-lg leading-snug"
+              >
+                Costillas de Cerdo para Barbacoa (800g)
+              </h3>
+              <div class="mt-auto">
+                <div class="flex items-baseline gap-2 mb-4">
+                  <span
+                    class="text-2xl font-bold text-slate-900 dark:text-white"
+                    >7,20€</span
+                  >
+                  <span class="text-sm text-slate-400 line-through">9,00€</span>
+                  <span
+                    class="text-[10px] text-slate-500 ml-auto uppercase font-bold"
+                    >Pack</span
+                  >
+                </div>
+                <button
+                  class="w-full py-4 bg-secondary/10 text-secondary hover:bg-secondary hover:text-white transition-all rounded-2xl font-bold flex items-center justify-center gap-2"
+                >
+                  <span class="material-symbols-outlined"
+                    >add_shopping_cart</span
+                  >
+                  Añadir
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="mb-12">
+          <h2
+            class="text-2xl font-display font-bold text-slate-900 dark:text-white mb-8"
+          >
+            Consejos del Carnicero y Recetas
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 flex gap-4 items-start"
+            >
+              <div
+                class="bg-orange-100 dark:bg-orange-900/30 p-3 rounded-xl shrink-0"
+              >
+                <span class="material-symbols-outlined text-primary"
+                  >scale</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold mb-2 dark:text-white">
+                  Recomendaciones de porciones
+                </h4>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                  Calcula 200g - 250g de carne por persona para platos
+                  principales con guarnición.
+                </p>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 flex gap-4 items-start"
+            >
+              <div
+                class="bg-blue-100 dark:bg-blue-900/30 p-3 rounded-xl shrink-0"
+              >
+                <span class="material-symbols-outlined text-blue-500"
+                  >menu_book</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold mb-2 dark:text-white">Salmón al Limón</h4>
+                <p class="text-xs text-slate-500 leading-relaxed mb-3">
+                  Receta simple: 15 min al horno con romero y rodajas de limón.
+                </p>
+                <a
+                  class="text-[10px] font-bold text-primary uppercase hover:underline"
+                  href="#"
+                  >Ver receta</a
+                >
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl p-6 border border-slate-100 dark:border-slate-700 flex gap-4 items-start"
+            >
+              <div
+                class="bg-green-100 dark:bg-green-900/30 p-3 rounded-xl shrink-0"
+              >
+                <span class="material-symbols-outlined text-secondary"
+                  >oven_gen</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold mb-2 dark:text-white">
+                  Trucos de Cocción
+                </h4>
+                <p class="text-xs text-slate-500 leading-relaxed">
+                  Sella la carne a fuego alto 2 min por lado para mantener los
+                  jugos.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="mt-20 py-16 border-t border-slate-200 dark:border-slate-800"
+        >
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div
+              class="flex flex-col items-center text-center p-6 rounded-3xl hover:bg-white dark:hover:bg-slate-800 transition-all cursor-default"
+            >
+              <div
+                class="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <span class="material-symbols-outlined text-secondary text-4xl"
+                  >local_shipping</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-2 dark:text-white">
+                Entregas en la zona
+              </h4>
+              <p class="text-slate-500 text-sm">
+                Llegamos a tu puerta en menos de 2 horas con total cuidado.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-6 rounded-3xl hover:bg-white dark:hover:bg-slate-800 transition-all cursor-default"
+            >
+              <div
+                class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <span class="material-symbols-outlined text-primary text-4xl"
+                  >verified</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-2 dark:text-white">
+                Productos frescos 100% garantizados
+              </h4>
+              <p class="text-slate-500 text-sm">
+                Calidad seleccionada a mano por nuestros expertos.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-6 rounded-3xl hover:bg-white dark:hover:bg-slate-800 transition-all cursor-default"
+            >
+              <div
+                class="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <span class="material-symbols-outlined text-blue-600 text-4xl"
+                  >groups</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-2 dark:text-white">
+                Más de 5000 pedidos al mes
+              </h4>
+              <p class="text-slate-500 text-sm">
+                Una comunidad que confía en Floops cada día.
+              </p>
+            </div>
+            <div
+              class="flex flex-col items-center text-center p-6 rounded-3xl hover:bg-white dark:hover:bg-slate-800 transition-all cursor-default"
+            >
+              <div
+                class="w-16 h-16 bg-orange-100 rounded-2xl flex items-center justify-center mb-6"
+              >
+                <span class="material-symbols-outlined text-orange-600 text-4xl"
+                  >payments</span
+                >
+              </div>
+              <h4 class="font-bold text-lg mb-2 dark:text-white">
+                Pago contra entrega o tarjeta
+              </h4>
+              <p class="text-slate-500 text-sm">
+                Tú eliges cómo pagar de forma segura y fácil.
+              </p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <div id="footer"></div>
+    <script src="../../common/components/layout.js"></script>
+    <script src="../../common/js/breadcrumbs.js"></script>
+  </body>
+</html>
