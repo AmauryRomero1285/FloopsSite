@@ -1,20 +1,20 @@
 [
   {
     "title": "Mango Ataulfo kg",
-    "url": "/app/frutas-y-vegetales/frutas-y-vegetales.html#mango-ataulfo",
+    "url": "/src/app/fruit-&-vegetables/frutas&vegetales.html#mango-ataulfo",
     "section": "Frutas y Vegetales",
     "category": "frutas-y-vegetales",
     "price": 48.50,
-    "image": "https://picsum.photos/id/201/300/300",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhxacTozKPcqxpV4wKn7hqNTRn48yMZFNxoA&s",
     "keywords": ["mango", "ataulfo", "fruta tropical", "dulce", "kg", "fresco", "mexicano", "verano"]
   },
   {
     "title": "Aguacate Hass kg",
-    "url": "/app/frutas-y-vegetales/frutas-y-vegetales.html#aguacate-hass",
+    "url": "/src/app/fruit-&-vegetables/frutas&vegetales.html#aguacate-hass",
     "section": "Frutas y Vegetales",
     "category": "frutas-y-vegetales",
     "price": 65.00,
-    "image": "https://picsum.photos/id/1080/300/300",
+    "image": "https://www.reyesgutierrez.com/wp-content/uploads/2021/04/aguacate-hass.jpg",
     "keywords": ["aguacate", "hass", "palta", "guacamole", "cremoso", "kg", "organico"]
   },
   {
@@ -23,7 +23,7 @@
     "section": "Lácteos y Huevos",
     "category": "lacteos-y-huevos",
     "price": 28.90,
-    "image": "https://picsum.photos/id/237/300/300",
+    "image": "https://i5.walmartimages.com.mx/gr/images/product-images/img_large/00750102051539L.jpg?odnHeight=612&odnWidth=612&odnBg=FFFFFF&format=avif",
     "keywords": ["leche", "deslactosada", "lala", "sin lactosa", "1 litro", "intolerante lactosa"]
   },
   {
@@ -32,16 +32,16 @@
     "section": "Bebidas",
     "category": "bebidas",
     "price": 42.00,
-    "image": "https://picsum.photos/id/870/300/300",
+    "image": "https://i5.walmartimages.com.mx/mg/gm/3pp/asr/f9346122-8a39-4d19-9ff9-e23d41159968.27bff5b179b3cc7bbb7968673759e435.jpeg?odnHeight=612&odnWidth=612&odnBg=FFFFFF",
     "keywords": ["coca cola", "sin azúcar", "zero", "refresco", "cola", "gaseosa", "2.5 litros"]
   },
   {
     "title": "Filete de Res 500g",
-    "url": "/app/meat-and-fish/meat-and-fish.html#filete-res",
+    "url": "/src/app/meat-&-fish/meat&fish.html#filete-res",
     "section": "Carnes y Pescados",
-    "category": "meat-and-fish",
+    "category": "carnes-y-pescados",
     "price": 135.00,
-    "image": "https://picsum.photos/id/292/300/300",
+    "image": "https://dilmun.mx/cdn/shop/files/filete-de-res-organico-en-bistec-500g-la-rumorosa-42898340184319.jpg?v=1718847244",
     "keywords": ["carne", "res", "filete", "bistec", "500g", "premium", "asado"]
   }
 ]
