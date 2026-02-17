@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Mango Ataulfo kg",
+    "url": "/app/frutas-y-vegetales/frutas-y-vegetales.html#mango-ataulfo",
+    "section": "Frutas y Vegetales",
+    "category": "frutas-y-vegetales",
+    "price": 48.50,
+    "image": "https://picsum.photos/id/201/300/300",
+    "keywords": ["mango", "ataulfo", "fruta tropical", "dulce", "kg", "fresco", "mexicano", "verano"]
+  },
+  {
+    "title": "Aguacate Hass kg",
+    "url": "/app/frutas-y-vegetales/frutas-y-vegetales.html#aguacate-hass",
+    "section": "Frutas y Vegetales",
+    "category": "frutas-y-vegetales",
+    "price": 65.00,
+    "image": "https://picsum.photos/id/1080/300/300",
+    "keywords": ["aguacate", "hass", "palta", "guacamole", "cremoso", "kg", "organico"]
+  },
+  {
+    "title": "Leche Deslactosada Lala 1L",
+    "url": "/app/lacteos-y-huevos/lacteos-y-huevos.html#leche-lala-deslactosada",
+    "section": "Lácteos y Huevos",
+    "category": "lacteos-y-huevos",
+    "price": 28.90,
+    "image": "https://picsum.photos/id/237/300/300",
+    "keywords": ["leche", "deslactosada", "lala", "sin lactosa", "1 litro", "intolerante lactosa"]
+  },
+  {
+    "title": "Coca-Cola Sin Azúcar 2.5L",
+    "url": "/app/bebidas/bebidas.html#coca-cola-sin-azucar",
+    "section": "Bebidas",
+    "category": "bebidas",
+    "price": 42.00,
+    "image": "https://picsum.photos/id/870/300/300",
+    "keywords": ["coca cola", "sin azúcar", "zero", "refresco", "cola", "gaseosa", "2.5 litros"]
+  },
+  {
+    "title": "Filete de Res 500g",
+    "url": "/app/meat-and-fish/meat-and-fish.html#filete-res",
+    "section": "Carnes y Pescados",
+    "category": "meat-and-fish",
+    "price": 135.00,
+    "image": "https://picsum.photos/id/292/300/300",
+    "keywords": ["carne", "res", "filete", "bistec", "500g", "premium", "asado"]
+  }
+]

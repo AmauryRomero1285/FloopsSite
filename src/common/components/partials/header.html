@@ -15,14 +15,40 @@
     </div>
     <div class="flex-1 max-w-2xl relative">
       <input
+        id="globalSearch"
         class="w-full pl-12 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-primary/50 text-sm transition-all outline-none"
-        placeholder="Busca productos, marcas y más..."
+        placeholder="Busca en todo Floops..."
         type="text"
+        autocomplete="off"
       />
       <span
         class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
         >search</span
       >
+
+      <!-- FILTRO POR SECCIÓN (demo) -->
+      <div
+        class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2"
+      >
+        <select
+          id="sectionFilter"
+          class="bg-white dark:bg-slate-700 text-xs border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-1 outline-none"
+        >
+          <option value="">Todas las secciones</option>
+          <option value="frutas-y-vegetales">Frutas & Vegetales</option>
+          <option value="lacteos-y-huevos">Lácteos y Huevos</option>
+          <option value="bebidas">Bebidas</option>
+          <option value="meat-&-fish">Carnes y Pescados</option>
+          <option value="panaderia-y-reposteria">Panadería</option>
+          <!-- agrega más opciones cuando tengas más categorías -->
+        </select>
+      </div>
+
+      <!-- Panel de resultados -->
+      <div
+        id="searchResults"
+        class="hidden absolute top-[110%] left-0 w-full bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 max-h-[420px] overflow-auto z-50 py-3"
+      ></div>
     </div>
     <div class="flex items-center gap-4">
       <button
