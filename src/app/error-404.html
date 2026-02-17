@@ -1,0 +1,106 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>404 - ¡Ups! Esta página se ha escapado del carrito | Floops</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!--Local config-->
+    <link rel="stylesheet" href="../common/css/global.css" />
+    <script src="../common/js/tailwindConfig.js"></script>
+    <script src="../common/js/theme.js"></script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300"
+  >
+    <div
+      id="header"
+      class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300"
+    ></div>
+    <div class="max-w-[1600px] mx-auto w-full flex-1 flex gap-8 px-4 py-6">
+  <aside class="w-72 flex-shrink-0">
+        <nav class="sticky top-28 space-y-2"><div id="sidebar"></div></nav>
+      </aside>
+      <main
+        class="flex-1 flex flex-col items-center justify-center text-center px-4 py-12"
+      >
+        <div class="max-w-2xl w-full flex flex-col items-center gap-8">
+          <div class="relative w-full aspect-square max-w-[400px]">
+            <img
+              alt="Empty grocery cart with spilled fruits"
+              class="w-full h-full object-contain"
+              src="https://cdn-icons-png.flaticon.com/512/1942/1942770.png"
+            />
+            <div
+              class="absolute inset-0 flex items-center justify-center opacity-20 pointer-events-none"
+            >
+             
+            </div>
+          </div>
+          <div class="space-y-4">
+            <h1
+              class="text-4xl md:text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight"
+            >
+              404 - ¡Ups! Esta página se ha
+              <span class="text-primary">escapado del carrito</span>
+            </h1>
+            <p
+              class="text-lg text-slate-500 dark:text-slate-400 max-w-lg mx-auto leading-relaxed"
+            >
+              Lo sentimos, no pudimos encontrar lo que buscabas. Tal vez se ha
+              movido de pasillo o ya no está en temporada.
+            </p>
+          </div>
+          <div class="w-full max-w-sm relative group">
+            <input
+              class="w-full pl-12 pr-4 py-4 bg-white dark:bg-slate-800 border-2 border-slate-100 dark:border-slate-700 rounded-2xl focus:ring-2 focus:ring-secondary/30 focus:border-secondary text-sm transition-all outline-none shadow-sm"
+              placeholder="¿Qué estabas buscando?"
+              type="text"
+            />
+            <span
+              class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-secondary transition-colors"
+              >search</span
+            >
+          </div>
+          <div
+            class="flex flex-col sm:flex-row items-center gap-4 w-full justify-center"
+          >
+            <a
+              class="w-full sm:w-auto px-8 py-4 bg-secondary hover:bg-green-600 text-white font-bold rounded-2xl shadow-lg shadow-secondary/20 transition-all hover:scale-105 flex items-center justify-center gap-2"
+              href="#"
+            >
+              <span class="material-symbols-outlined">home</span>
+              Volver al Inicio
+            </a>
+            <a
+              class="w-full sm:w-auto px-8 py-4 text-primary font-bold hover:bg-primary/5 rounded-2xl transition-all flex items-center justify-center gap-2"
+              href="#"
+            >
+              <span class="material-symbols-outlined">local_offer</span>
+              Ver Ofertas del día
+            </a>
+          </div>
+        </div>
+      </main>
+    </div>
+    <div id="footer"></div>
+    <script src="../common/components/layout.js"></script>
+    <script src="../common/js/global-search.js"></script>
+  </body>
+</html>
