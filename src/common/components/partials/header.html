@@ -2,77 +2,99 @@
   <div
     class="max-w-[1600px] mx-auto px-4 h-20 flex items-center justify-between gap-8"
   >
+    <!-- Logo -->
     <div class="flex items-center gap-2">
-      <div class="bg-primary p-2 rounded-xl">
-        <span class="material-icons-round text-white text-2xl"
-          >shopping_basket</span
+      <a href="/src/app/index.html" class="flex items-center gap-2 group">
+        <!-- Contenedor del Icono -->
+        <div class="bg-primary p-2 rounded-xl flex items-center justify-center">
+          <span class="material-icons-round text-white text-2xl">
+            shopping_basket
+          </span>
+        </div>
+        <!-- Texto del Logo -->
+        <span
+          class="text-2xl font-bold font-display tracking-tight text-slate-900 dark:text-white"
         >
-      </div>
-      <span
-        class="text-2xl font-bold font-display tracking-tight text-slate-900 dark:text-white"
-        >Floops</span
-      >
+          Floops
+        </span>
+      </a>
     </div>
+
+    <!-- Barra de búsqueda -->
     <div class="flex-1 max-w-2xl relative">
       <input
         id="globalSearch"
-        class="w-full pl-12 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-primary/50 text-sm transition-all outline-none"
+        class="w-full pl-12 pr-4 py-2.5 bg-slate-100 dark:bg-slate-800 border-none rounded-2xl focus:ring-2 focus:ring-primary/50 text-sm transition-all outline-none placeholder:text-slate-500 dark:placeholder:text-slate-400"
         placeholder="Busca en todo Floops..."
         type="text"
         autocomplete="off"
       />
       <span
-        class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400"
-        >search</span
+        class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none"
       >
+        search
+      </span>
 
-      <!-- FILTRO POR SECCIÓN (demo) -->
+      <!-- Filtro por sección (demo) -->
       <div
         class="absolute right-4 top-1/2 -translate-y-1/2 flex items-center gap-2"
       >
         <select
           id="sectionFilter"
-          class="bg-white dark:bg-slate-700 text-xs border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-1 outline-none"
+          class="bg-white dark:bg-slate-700 text-xs border border-slate-300 dark:border-slate-600 rounded-xl px-3 py-1 outline-none cursor-pointer"
         >
           <option value="">Todas las secciones</option>
           <option value="frutas-y-vegetales">Frutas & Vegetales</option>
           <option value="lacteos-y-huevos">Lácteos y Huevos</option>
           <option value="bebidas">Bebidas</option>
-          <option value="meat-&-fish">Carnes y Pescados</option>
+          <option value="carnes-y-pescados">Carnes y Pescados</option>
           <option value="panaderia-y-reposteria">Panadería</option>
-          <!-- agrega más opciones cuando tengas más categorías -->
+          <!-- Agrega más cuando tengas más categorías -->
         </select>
       </div>
 
-      <!-- Panel de resultados -->
+      <!-- Panel de resultados de búsqueda -->
       <div
         id="searchResults"
         class="hidden absolute top-[110%] left-0 w-full bg-white dark:bg-slate-800 rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-700 max-h-[420px] overflow-auto z-50 py-3"
       ></div>
     </div>
+
+    <!-- Acciones del usuario -->
     <div class="flex items-center gap-4">
+      <!-- Toggle dark mode -->
       <button
         class="p-2.5 text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all"
+        aria-label="Cambiar modo oscuro/claro"
         onclick="toggleDarkMode()"
       >
         <span class="material-icons-round dark:hidden">dark_mode</span>
         <span class="material-icons-round hidden dark:block">light_mode</span>
       </button>
+
+      <!-- Mi Cuenta -->
       <button
         class="flex items-center gap-2 px-4 py-2.5 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-xl transition-all font-medium"
       >
         <span class="material-icons-round">person_outline</span>
         <span>Mi Cuenta</span>
       </button>
+
+      <!-- Carrito -->
       <button
-        class="relative bg-primary hover:bg-orange-600 text-white p-2.5 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center gap-2 px-4"
+        class="relative bg-primary hover:bg-primary/90 text-white p-2.5 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center gap-2 px-5"
+        aria-label="Ver carrito de compras"
       >
         <span class="material-icons-round">shopping_cart</span>
-        <span class="font-semibold">Carrito</span>
+        <a href="/src/app/carrito/index.html" class="font-semibold">Carrito</a>
+
+        <!-- Badge de cantidad (se muestra/oculta vía JS) -->
         <span
-          class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] font-bold w-5 h-5 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900"
-          >3</span
+          id="cart-count-badge"
+          class="absolute -top-2 -right-2 bg-secondary text-white text-[10px] font-bold min-w-[20px] h-5 flex items-center justify-center rounded-full border-2 border-white dark:border-slate-900 px-1 hidden"
         >
+          0
+        </span>
       </button>
     </div>
   </div>

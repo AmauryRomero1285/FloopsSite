@@ -1,375 +1,148 @@
 <!doctype html>
 <html class="light" lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <meta name="keywords" content="frutas, vegetales, mango ataulfo, aguacate hass, supermercado Puebla, entrega a domicilio">
-    <title>Floops Supermarket - Frutas y Verduras</title>
-    <!--CDN de Tailwind-->
-    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
-    <!--Google Fonts & Icons-->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <!--Local config-->
-    <link rel="stylesheet" href="../../common/css/global.css" />
-    <script src="../../common/js/tailwindConfig.js"></script>
-    <script src="../../common/js/theme.js"></script>
-  </head>
-  <body
-    class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300"
-  >
-    <div
-      id="header"
-      class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300"
-    ></div>
-    <div class="max-w-[1600px] mx-auto w-full flex-1 flex gap-8 px-4 py-6">
-      <aside class="w-72 flex-shrink-0">
-        <nav class="sticky top-28 space-y-2">
-          <div id="sidebar"></div>
-        </nav>
-      </aside>
-      <main class="flex-1 min-w-0">
-        <div id="breadcrumb"></div>
-        <section
-          class="mb-10 relative rounded-3xl overflow-hidden bg-primary/10 group"
-        >
-          <div class="flex items-center justify-between px-12 py-16">
-            <div class="max-w-md">
-              <span
-                class="inline-block px-3 py-1 bg-white/50 dark:bg-slate-800/50 backdrop-blur rounded-full text-xs font-bold text-primary mb-4"
-                >OFERTA DE LA SEMANA</span
-              >
-              <h1
-                class="text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight mb-4"
-              >
-                Frescura Directa del Campo
-              </h1>
-              <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">
-                Disfruta de hasta un 30% de descuento en toda nuestra selección
-                de frutas de temporada.
-              </p>
-              <button
-                class="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-primary/30 transition-all hover:-translate-y-1"
-              >
-                Ver Frutas de Temporada
-              </button>
-            </div>
-            <div class="relative hidden lg:block">
-              <img
-                alt="Fresh Fruits"
-                class="w-80 h-80 object-cover rounded-3xl shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Qx2JDjV6VsqHQwEiOe_5Rk1x9_FxmXyrS1S-TBjn2EBPDtBrHfa0NlanE5zabtFgoapZ4FqxfYfDbmxk1Er_M3fV0nZ5PEaPVUEQVNA5S0nJ3B4rvQ5lTbRddGgO-BUn75Cx_yIBhOTwz3yO-MkPI4tV-IzzxYSGZAgcoGLvCRYfE2oOGaIoVfY47jpZDU_48gMdczHgX-YlfyMSRb5sA7jF4N9gkB3pg3uNNLNkyW01DYNJBN-8wc_6vUVBfQNucPIPghrggw"
-              />
-              <div
-                class="absolute -bottom-4 -left-4 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce"
-              >
-                <div class="bg-green-100 dark:bg-green-900/30 p-2 rounded-xl">
-                  <span class="material-icons-round text-secondary"
-                    >verified</span
-                  >
-                </div>
-                <div>
-                  <p class="text-xs font-bold dark:text-white">100% Orgánico</p>
-                  <p class="text-[10px] text-slate-500">Certificado</p>
-                </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="keywords" content="frutas, vegetales, mango ataulfo, aguacate hass, supermercado Puebla, entrega a domicilio">
+  <title>Floops Supermarket - Frutas y Verduras</title>
+
+  <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../../common/css/global.css" />
+  <script src="../../common/js/tailwindConfig.js"></script>
+  <script src="../../common/js/theme.js"></script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300">
+
+  <div id="header" class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300"></div>
+
+  <div class="max-w-[1600px] mx-auto w-full flex-1 flex gap-8 px-4 py-6">
+    <aside class="w-72 flex-shrink-0">
+      <nav class="sticky top-28 space-y-2">
+        <div id="sidebar"></div>
+      </nav>
+    </aside>
+
+    <main class="flex-1 min-w-0">
+      <div id="breadcrumb"></div>
+
+      <!-- Hero -->
+      <section class="mb-10 relative rounded-3xl overflow-hidden bg-primary/10 group">
+        <div class="flex items-center justify-between px-12 py-16">
+          <div class="max-w-md">
+            <span class="inline-block px-3 py-1 bg-white/50 dark:bg-slate-800/50 backdrop-blur rounded-full text-xs font-bold text-primary mb-4">
+              OFERTA DE LA SEMANA
+            </span>
+            <h1 class="text-5xl font-display font-bold text-slate-900 dark:text-white leading-tight mb-4">
+              Frescura Directa del Campo
+            </h1>
+            <p class="text-slate-600 dark:text-slate-400 mb-8 text-lg">
+              Disfruta de hasta un 30% de descuento en toda nuestra selección de frutas de temporada.
+            </p>
+            <button class="bg-primary hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-bold shadow-xl shadow-primary/30 transition-all hover:-translate-y-1">
+              Ver Frutas de Temporada
+            </button>
+          </div>
+          <div class="relative hidden lg:block">
+            <img
+              alt="Fresh Fruits"
+              class="w-80 h-80 object-cover rounded-3xl shadow-2xl rotate-3 group-hover:rotate-0 transition-transform duration-500"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Qx2JDjV6VsqHQwEiOe_5Rk1x9_FxmXyrS1S-TBjn2EBPDtBrHfa0NlanE5zabtFgoapZ4FqxfYfDbmxk1Er_M3fV0nZ5PEaPVUEQVNA5S0nJ3B4rvQ5lTbRddGgO-BUn75Cx_yIBhOTwz3yO-MkPI4tV-IzzxYSGZAgcoGLvCRYfE2oOGaIoVfY47jpZDU_48gMdczHgX-YlfyMSRb5sA7jF4N9gkB3pg3uNNLNkyW01DYNJBN-8wc_6vUVBfQNucPIPghrggw"
+            />
+            <div class="absolute -bottom-4 -left-4 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-bounce">
+              <div class="bg-green-100 dark:bg-green-900/30 p-2 rounded-xl">
+                <span class="material-icons-round text-secondary">verified</span>
+              </div>
+              <div>
+                <p class="text-xs font-bold dark:text-white">100% Orgánico</p>
+                <p class="text-[10px] text-slate-500">Certificado</p>
               </div>
             </div>
           </div>
-          <div
-            class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-32 -mt-32"
-          ></div>
-        </section>
-        <section class="mb-12">
-          <div class="flex items-center justify-between mb-6">
-            <h2
-              class="text-2xl font-display font-bold text-slate-900 dark:text-white"
-            >
-              Subcategorías Destacadas
+        </div>
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-3xl -mr-32 -mt-32"></div>
+      </section>
+
+      <!-- Subcategorías destacadas -->
+      <section class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+          <h2 class="text-2xl font-display font-bold text-slate-900 dark:text-white">
+            Subcategorías Destacadas
+          </h2>
+          <a class="text-sm font-semibold text-primary hover:underline" href="#">Ver todas</a>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group">
+            <div class="w-16 h-16 bg-orange-50 dark:bg-orange-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-icons-round text-orange-500 text-3xl">restaurant</span>
+            </div>
+            <h3 class="font-bold text-sm dark:text-white">Frutas</h3>
+            <p class="text-xs text-slate-400">42 productos</p>
+          </div>
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group">
+            <div class="w-16 h-16 bg-green-50 dark:bg-green-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-icons-round text-green-500 text-3xl">grass</span>
+            </div>
+            <h3 class="font-bold text-sm dark:text-white">Verduras</h3>
+            <p class="text-xs text-slate-400">38 productos</p>
+          </div>
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group">
+            <div class="w-16 h-16 bg-red-50 dark:bg-red-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-icons-round text-red-500 text-3xl">favorite</span>
+            </div>
+            <h3 class="font-bold text-sm dark:text-white">Frutos Rojos</h3>
+            <p class="text-xs text-slate-400">12 productos</p>
+          </div>
+          <div class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group">
+            <div class="w-16 h-16 bg-yellow-50 dark:bg-yellow-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <span class="material-icons-round text-yellow-500 text-3xl">beach_access</span>
+            </div>
+            <h3 class="font-bold text-sm dark:text-white">Tropicales</h3>
+            <p class="text-xs text-slate-400">15 productos</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Flash de Ahorro - ahora dinámico -->
+      <section class="mb-12">
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <h2 class="text-2xl font-display font-bold text-slate-900 dark:text-white">
+              Flash de Ahorro
             </h2>
-            <a
-              class="text-sm font-semibold text-primary hover:underline"
-              href="#"
-              >Ver todas</a
-            >
-          </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <div
-              class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group"
-            >
-              <div
-                class="w-16 h-16 bg-orange-50 dark:bg-orange-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform"
-              >
-                <span class="material-icons-round text-orange-500 text-3xl"
-                  >restaurant</span
-                >
-              </div>
-              <h3 class="font-bold text-sm dark:text-white">Frutas</h3>
-              <p class="text-xs text-slate-400">42 productos</p>
-            </div>
-            <div
-              class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group"
-            >
-              <div
-                class="w-16 h-16 bg-green-50 dark:bg-green-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform"
-              >
-                <span class="material-icons-round text-green-500 text-3xl"
-                  >grass</span
-                >
-              </div>
-              <h3 class="font-bold text-sm dark:text-white">Verduras</h3>
-              <p class="text-xs text-slate-400">38 productos</p>
-            </div>
-            <div
-              class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group"
-            >
-              <div
-                class="w-16 h-16 bg-red-50 dark:bg-red-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform"
-              >
-                <span class="material-icons-round text-red-500 text-3xl"
-                  >favorite</span
-                >
-              </div>
-              <h3 class="font-bold text-sm dark:text-white">Frutos Rojos</h3>
-              <p class="text-xs text-slate-400">12 productos</p>
-            </div>
-            <div
-              class="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 hover:shadow-md transition-all cursor-pointer text-center group"
-            >
-              <div
-                class="w-16 h-16 bg-yellow-50 dark:bg-yellow-900/20 rounded-full mx-auto mb-3 flex items-center justify-center group-hover:scale-110 transition-transform"
-              >
-                <span class="material-icons-round text-yellow-500 text-3xl"
-                  >beach_access</span
-                >
-              </div>
-              <h3 class="font-bold text-sm dark:text-white">Tropicales</h3>
-              <p class="text-xs text-slate-400">15 productos</p>
+            <div class="flex items-center gap-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-3 py-1 rounded-lg text-sm font-bold animate-pulse">
+              <span class="material-icons-round text-sm">timer</span>
+              <span>23:59:01</span>
             </div>
           </div>
-        </section>
-        <section class="mb-12">
-          <div class="flex items-center justify-between mb-6">
-            <div class="flex items-center gap-3">
-              <h2
-                class="text-2xl font-display font-bold text-slate-900 dark:text-white"
-              >
-                Flash de Ahorro
-              </h2>
-              <div
-                class="flex items-center gap-1 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 px-3 py-1 rounded-lg text-sm font-bold animate-pulse"
-              >
-                <span class="material-icons-round text-sm">timer</span>
-                <span>23:59:01</span>
-              </div>
-            </div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div
-              class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group flex flex-col h-full"
-            >
-              <div
-                class="relative overflow-hidden h-48 bg-slate-100 dark:bg-slate-700"
-              >
-                <img
-                  alt="Piña Gold"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrKH784gHo9jW-21IARRq2VnK4b0WbzVf7a3jPS6ros6SK5FKkJmZ_3ensBvhMjaMHxfOl1Z9nrmMREvqknjtnsjkHQCsFWjvUI8d4kMGz3fZT7dwXz52rOBshZap9xcSzCxV2aAyhdOWKQ2sC1zrs5sKG5UNWAz8t4EI7UQCwBNINz2LjO3_-ga2PAN70R7fpmEksTVhnuyiVtPRPEmTWEmrkkT2Nmn3IJhtMfuCpju01HBMXuT5SYfcmZWZaX8rSoFSGvK9euw"
-                />
-                <span
-                  class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase"
-                  >-25%</span
-                >
-                <button
-                  class="absolute top-3 right-3 p-2 bg-white/80 dark:bg-slate-900/80 backdrop-blur rounded-full text-slate-400 hover:text-red-500 transition-colors"
-                >
-                  <span class="material-icons-round text-lg"
-                    >favorite_border</span
-                  >
-                </button>
-              </div>
-              <div class="p-4 flex flex-col flex-1">
-                <p class="text-xs text-slate-400 font-medium mb-1">
-                  Frutas Tropicales
-                </p>
-                <h3
-                  class="font-bold text-slate-800 dark:text-white mb-2 line-clamp-2"
-                >
-                  Piña Gold Extra Dulce Seleccionada
-                </h3>
-                <div class="mt-auto">
-                  <div class="flex items-baseline gap-2 mb-3">
-                    <span
-                      class="text-xl font-bold text-slate-900 dark:text-white"
-                      >1,99€</span
-                    >
-                    <span class="text-sm text-slate-400 line-through"
-                      >2,65€</span
-                    >
-                    <span class="text-[10px] text-slate-500 ml-auto"
-                      >unidad</span
-                    >
-                  </div>
-                  <button
-                    class="w-full py-3 bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition-all rounded-xl font-bold text-sm flex items-center justify-center gap-2"
-                  >
-                    <span class="material-icons-round text-lg"
-                      >add_shopping_cart</span
-                    >
-                    Añadir
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group flex flex-col h-full"
-            >
-              <div
-                class="relative overflow-hidden h-48 bg-slate-100 dark:bg-slate-700"
-              >
-                <img
-                  alt="Plátano Canario"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuC45kdRGek2TZ-HAwUZzgMr_t61gDylZ9K6EZlpGggBJksD7AEe7SXyEVPUoeRDExw1MX1gRPZ5Zabi3sz2jpZWoHI0ggAPbufqkmj2VSlXStQVPaoXYPDtrTs5BzwW9UHNHwcJknuBNXgdaTzPOLtxpJ6G1U9X0nwZeFn97tfQJ5iBmoZV3xIsLeEWD946KRE0JFIsqwNYqmh-_I4BnXVdx1HnuGoLzD2S20NaYRFkk42p-9weAWLAZN7jzhysrGa-rnSvrGrSiQ"
-                />
-                <span
-                  class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase"
-                  >-15%</span
-                >
-              </div>
-              <div class="p-4 flex flex-col flex-1">
-                <p class="text-xs text-slate-400 font-medium mb-1">
-                  Frutas Nacionales
-                </p>
-                <h3 class="font-bold text-slate-800 dark:text-white mb-2">
-                  Plátano de Canarias Extra (Malla 1kg)
-                </h3>
-                <div class="mt-auto">
-                  <div class="flex items-baseline gap-2 mb-3">
-                    <span
-                      class="text-xl font-bold text-slate-900 dark:text-white"
-                      >2,49€</span
-                    >
-                    <span class="text-sm text-slate-400 line-through"
-                      >2,95€</span
-                    >
-                    <span class="text-[10px] text-slate-500 ml-auto">kilo</span>
-                  </div>
-                  <button
-                    class="w-full py-3 bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition-all rounded-xl font-bold text-sm flex items-center justify-center gap-2"
-                  >
-                    <span class="material-icons-round text-lg"
-                      >add_shopping_cart</span
-                    >
-                    Añadir
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group flex flex-col h-full"
-            >
-              <div
-                class="relative overflow-hidden h-48 bg-slate-100 dark:bg-slate-700"
-              >
-                <img
-                  alt="Arándanos"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBe08ZC_D-N4P0dH0p56Zmx55sOzDBZ6t97GM7fRSkmCueeI0QcOkUKu9-5z7B5rIZlsVUlEAs3rXavIwc-Ufh0SYqRDNWx9MOPiW1k_-ES4uSZJPbs3gREuwSQSeAy7S1cAKm2wqo2Jx_eaqVsnbx-R8khaSvP1kmo0Hubs1pElogV6K1BgnoDpXr4bvzZ4UUtc8g_CmUHVd8RBWfAGopAg0SqlS5UCJJtvZfpRhKzAlkesxN2jOfO-nVWlSFYMg_-nhT6rx0FzA"
-                />
-                <span
-                  class="absolute top-3 left-3 bg-secondary text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase"
-                  >PACK AHORRO</span
-                >
-              </div>
-              <div class="p-4 flex flex-col flex-1">
-                <p class="text-xs text-slate-400 font-medium mb-1">
-                  Frutos Rojos
-                </p>
-                <h3 class="font-bold text-slate-800 dark:text-white mb-2">
-                  Arándanos Frescos Pack XL (500g)
-                </h3>
-                <div class="mt-auto">
-                  <div class="flex items-baseline gap-2 mb-3">
-                    <span
-                      class="text-xl font-bold text-slate-900 dark:text-white"
-                      >5,50€</span
-                    >
-                    <span class="text-[10px] text-slate-500 ml-auto">pack</span>
-                  </div>
-                  <button
-                    class="w-full py-3 bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition-all rounded-xl font-bold text-sm flex items-center justify-center gap-2"
-                  >
-                    <span class="material-icons-round text-lg"
-                      >add_shopping_cart</span
-                    >
-                    Añadir
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div
-              class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group flex flex-col h-full"
-            >
-              <div
-                class="relative overflow-hidden h-48 bg-slate-100 dark:bg-slate-700"
-              >
-                <img
-                  alt="Zanahorias"
-                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBWA1pYijvNDOhV01VLpmW1Pmw9BEsqMBrDzjglDrYQmk-WyFSbBSN9cjS1EaAyMti1mgeAm8cTEztTuwaappB3OBPhR6VxNrItQLpegbZSw4xvRIPoQICIcqc8Awg75_gGDdlQ886zYbmCsK2_0Uxn7IRvDccWqNZPacILIa62YmGKaH2yBw9vKDBiYT9QfV1C1b4zXwiDXzmQxZKX4n6-IEzSFH4dOGZRW5h2c_mCoECpwc3AcNO8ETcI1yR1KRmZOB_vTfWRQ"
-                />
-                <span
-                  class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2 py-1 rounded-md uppercase"
-                  >-40%</span
-                >
-              </div>
-              <div class="p-4 flex flex-col flex-1">
-                <p class="text-xs text-slate-400 font-medium mb-1">Verduras</p>
-                <h3 class="font-bold text-slate-800 dark:text-white mb-2">
-                  Zanahoria Selección (Bolsa 1kg)
-                </h3>
-                <div class="mt-auto">
-                  <div class="flex items-baseline gap-2 mb-3">
-                    <span
-                      class="text-xl font-bold text-slate-900 dark:text-white"
-                      >0,69€</span
-                    >
-                    <span class="text-sm text-slate-400 line-through"
-                      >1,15€</span
-                    >
-                    <span class="text-[10px] text-slate-500 ml-auto">kilo</span>
-                  </div>
-                  <button
-                    class="w-full py-3 bg-slate-100 dark:bg-slate-700 hover:bg-primary hover:text-white dark:hover:bg-primary transition-all rounded-xl font-bold text-sm flex items-center justify-center gap-2"
-                  >
-                    <span class="material-icons-round text-lg"
-                      >add_shopping_cart</span
-                    >
-                    Añadir
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </main>
-    </div>
-    <div id="footer"></div>
-    <script src="../../common/components/layout.js"></script>
-    <script src="../../common/js/global-search.js"></script>
-  </body>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="products-grid">
+          <!-- Tarjetas inyectadas aquí -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="../../common/components/layout.js"></script>
+  <script src="../../common/js/global-search.js"></script>
+  <script src="/src/common/utils/helpers.js"></script>
+  <script src="../../common/js/product-utils.js"></script>
+
+  <!-- Cargar productos de la categoría "frutas" -->
+  <script>
+    fetch('../../common/data/products.json')
+      .then(res => res.json())
+      .then(data => {
+        renderProducts('#products-grid', data.frutas.products);
+      })
+      .catch(err => console.error('Error cargando productos de frutas:', err));
+  </script>
+</body>
 </html>

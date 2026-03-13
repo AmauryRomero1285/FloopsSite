@@ -1,4 +1,4 @@
-// layout.js (versión corregida)
+// layout.js (versión mejorada)
 
 const COMPONENT_PATH = "/src/common/components/partials";
 
@@ -17,21 +17,31 @@ async function loadPartial(id, path) {
     const html = await res.text();
     target.innerHTML = html;
 
-    // Disparamos el evento después de insertar el HTML
+    // Disparamos evento personalizado
     document.dispatchEvent(
-      new CustomEvent("partial:loaded", {   // ← nota: usa "partial:loaded" consistente
-        detail: { id },
+      new CustomEvent("partial:loaded", {
+        detail: { id, element: target },
       })
     );
+
+    // Evento especial cuando TODOS los partials críticos están listos
+    if (id === "header") {
+      document.dispatchEvent(new CustomEvent("header:loaded"));
+    }
   } catch (err) {
     console.error(`Fallo al cargar partial ${id}:`, err);
   }
 }
 
-// ¡Importante! Esperar a que el DOM esté listo
 document.addEventListener("DOMContentLoaded", () => {
-  loadPartial("header",    `${COMPONENT_PATH}/header.html`);
-  loadPartial("footer",    `${COMPONENT_PATH}/footer.html`);
-  loadPartial("sidebar",   `${COMPONENT_PATH}/sidebar.html`);
-  loadPartial("breadcrumb", `${COMPONENT_PATH}/breadcrumb.html`);
+  // Cargar partials
+  Promise.all([
+    loadPartial("header",    `${COMPONENT_PATH}/header.html`),
+    loadPartial("footer",    `${COMPONENT_PATH}/footer.html`),
+    loadPartial("sidebar",   `${COMPONENT_PATH}/sidebar.html`),
+    loadPartial("breadcrumb", `${COMPONENT_PATH}/breadcrumb.html`),
+  ]).then(() => {
+    // Opcional: evento cuando todo terminó de cargar
+    document.dispatchEvent(new CustomEvent("partials:all-loaded"));
+  });
 });

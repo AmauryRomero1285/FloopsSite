@@ -1,0 +1,226 @@
+<!doctype html>
+<html class="light" lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floops - Carrito de Compras</title>
+     <!--CDN de Tailwind-->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <!--Google Fonts & Icons-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Round"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Outfit:wght@400;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <!--Local config-->
+    <link rel="stylesheet" href="../../common/css/global.css" />
+    <script src="../../common/js/tailwindConfig.js"></script>
+    <script src="../../common/js/theme.js"></script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col transition-colors duration-300"
+  >
+    <div
+      id="header"
+      class="sticky top-0 z-50 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300"
+    ></div>
+
+    <div class="max-w-[1600px] mx-auto w-full flex-1 flex gap-8 px-4 py-6">
+      <aside class="w-72 flex-shrink-0 hidden lg:block">
+        <nav class="sticky top-28 space-y-2">
+          <div id="sidebar"></div>
+        </nav>
+      </aside>
+
+      <main class="flex-1 min-w-0">
+        <div class="mb-8">
+          <h1
+            class="text-4xl sm:text-5xl font-display font-black text-slate-900 dark:text-white leading-tight"
+          >
+            Tu Carrito
+          </h1>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- Sección izquierda: productos o mensaje vacío -->
+          <div class="flex-1 space-y-6">
+            <!-- Mensaje carrito vacío -->
+            <div
+              id="empty-cart"
+              class="hidden flex flex-col items-center justify-center py-16 text-center"
+            >
+              <span
+                class="material-symbols-outlined text-8xl text-slate-300 dark:text-slate-600 mb-6"
+              >
+                shopping_cart
+              </span>
+              <h2
+                class="text-2xl font-bold text-slate-700 dark:text-slate-200 mb-3"
+              >
+                Tu carrito está vacío
+              </h2>
+              <p class="text-slate-500 dark:text-slate-400 mb-8 max-w-md">
+                Parece que aún no has agregado ningún producto. ¡Explora
+                nuestras categorías y encuentra lo que necesitas!
+              </p>
+              <a
+                href="/src/app/index.html"
+                class="bg-primary hover:bg-primary/90 text-white font-bold px-8 py-4 rounded-xl flex items-center gap-3 shadow-lg shadow-primary/20 transition-all"
+              >
+                <span class="material-symbols-outlined">arrow_forward</span>
+                Comenzar a comprar
+              </a>
+            </div>
+
+            <!-- Lista de productos -->
+            <div id="products-list" class="space-y-4">
+              <!-- Aquí van las tarjetas de productos dinámicamente -->
+            </div>
+            <div id="continue-shopping-wrapper" class="pt-4">
+              <a
+                href="/src/app/index.html"
+                class="inline-flex items-center gap-2 text-primary font-bold text-lg hover:underline transition-all"
+              >
+                <span class="material-symbols-outlined">arrow_back</span>
+                Seguir comprando
+              </a>
+            </div>
+          </div>
+
+          <!-- Resumen lateral -->
+          <aside
+            class="w-full lg:w-96 space-y-6 lg:sticky lg:top-28 lg:self-start"
+          >
+            <div
+              class="bg-white dark:bg-slate-800 rounded-2xl shadow-lg border border-slate-200 dark:border-slate-700 overflow-hidden"
+            >
+              <div class="p-6 border-b border-slate-100 dark:border-slate-700">
+                <h3 class="text-2xl font-black text-slate-900 dark:text-white">
+                  Resumen de Compra
+                </h3>
+              </div>
+              <div id="cart-summary" class="p-6 space-y-5">
+                <div
+                  class="flex justify-between text-base font-medium text-slate-600 dark:text-slate-300"
+                >
+                  <span>Subtotal</span>
+                  <span id="subtotal-value">$0,00</span>
+                </div>
+                <div
+                  class="flex justify-between text-base font-medium text-slate-600 dark:text-slate-300"
+                >
+                  <span>Envío</span>
+                  <span
+                    class="text-green-600 dark:text-green-400 font-bold uppercase text-sm tracking-wide"
+                    >Gratis</span
+                  >
+                </div>
+                <div
+                  class="flex justify-between text-base font-medium text-slate-600 dark:text-slate-300"
+                >
+                  <span>Descuentos Club Floops</span>
+                  <span id="discount-value" class="text-primary">$0,00</span>
+                </div>
+
+                <div
+                  class="pt-5 border-t border-slate-100 dark:border-slate-700"
+                >
+                  <div class="flex justify-between items-end">
+                    <span
+                      class="text-xl font-bold text-slate-900 dark:text-white"
+                      >Total</span
+                    >
+                    <div class="text-right">
+                      <p
+                        id="total-value"
+                        class="text-4xl font-black text-primary"
+                      >
+                        $0,00
+                      </p>
+                      <p
+                        class="text-xs text-slate-400 dark:text-slate-500 mt-1"
+                      >
+                        IVA Incluido
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-slate-50 dark:bg-slate-700/30 p-5 rounded-xl border border-slate-100 dark:border-slate-600 space-y-3"
+                >
+                  <div
+                    class="flex items-center gap-2 text-slate-500 dark:text-slate-400"
+                  >
+                    <span class="material-symbols-outlined"
+                      >local_shipping</span
+                    >
+                    <span class="text-xs font-bold uppercase tracking-wider"
+                      >Enviar a:</span
+                    >
+                  </div>
+                  <p class="text-sm font-bold text-slate-900 dark:text-white">
+                    Av. Siempre Viva 742, Springfield
+                  </p>
+                  <button
+                    class="text-primary text-sm font-bold hover:underline"
+                  >
+                    Cambiar dirección
+                  </button>
+                </div>
+
+                <button
+                  id="checkout-button"
+                  class="w-full bg-primary hover:bg-primary/90 text-white font-black text-lg py-4 rounded-xl flex items-center justify-center gap-3 transition-all shadow-xl shadow-primary/20 active:scale-98 disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled
+                >
+                  Finalizar Compra
+                  <span class="material-symbols-outlined text-xl"
+                    >arrow_forward</span
+                  >
+                </button>
+              </div>
+            </div>
+
+            <div
+              class="bg-primary/5 dark:bg-primary/10 p-5 rounded-2xl border border-primary/20 flex gap-4"
+            >
+              <span class="material-symbols-outlined text-primary text-4xl"
+                >verified_user</span
+              >
+              <div>
+                <h4 class="text-base font-bold text-slate-900 dark:text-white">
+                  Compra Protegida
+                </h4>
+                <p
+                  class="text-sm text-slate-500 dark:text-slate-400 mt-2 leading-relaxed"
+                >
+                  Recibí el producto que esperabas o te devolvemos tu dinero con
+                  la garantía Floops.
+                </p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <div id="footer"></div>
+
+    <script src="../../common/components/layout.js"></script>
+    <script src="../../common/js/global-search.js"></script>
+    <script src="../../common/js/cart.js"></script>
+    <script src="/src/common/utils/helpers.js"></script>
+  </body>
+</html>
