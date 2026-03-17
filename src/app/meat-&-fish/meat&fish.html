@@ -59,32 +59,11 @@
       </section>
 
       <!-- Productos dinámicos -->
-      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16" id="products-grid">
+      <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-16" id="meat-grid">
         <!-- Tarjetas inyectadas aquí -->
       </section>
 
-      <!-- Filtros -->
-      <section class="bg-white dark:bg-slate-800 rounded-2xl p-4 mb-8 border border-slate-100 dark:border-slate-700 flex flex-wrap items-center justify-between gap-4">
-        <div class="flex items-center gap-6">
-          <div class="flex items-center gap-2">
-            <span class="text-sm font-bold text-slate-400 uppercase tracking-wide">Ordenar:</span>
-            <select class="bg-slate-50 dark:bg-slate-900 border-none text-sm font-medium rounded-xl focus:ring-primary/20 cursor-pointer">
-              <option>Popularidad</option>
-              <option>Precio: Menor a Mayor</option>
-              <option>Precio: Mayor a Menor</option>
-            </select>
-          </div>
-          <div class="flex items-center gap-2">
-            <span class="text-sm font-bold text-slate-400 uppercase tracking-wide">Indicador:</span>
-            <div class="flex items-center gap-2 px-3 py-1.5 bg-green-50 dark:bg-green-900/20 text-secondary rounded-xl text-xs font-bold border border-secondary/20">
-              <span class="w-2 h-2 bg-secondary rounded-full animate-pulse"></span>
-              Frescura 100% Garantizada
-            </div>
-          </div>
-        </div>
-        <div class="flex items-center gap-2 text-slate-400">
-          <span class="text-xs font-medium">Mostrando 24 productos</span>
-        </div>
+     
       </section>
 
       <!-- Consejos -->
@@ -173,15 +152,5 @@
   <script src="../../common/js/breadcrumbs.js"></script>
   <script src="/src/common/utils/helpers.js"></script>
   <script src="../../common/js/product-utils.js"></script>
-
-  <!-- Cargar productos de la categoría "carnes" -->
-  <script>
-    fetch('../../common/data/products.json')
-      .then(res => res.json())
-      .then(data => {
-        renderProducts('#products-grid', data.carnes.products);
-      })
-      .catch(err => console.error('Error cargando productos de carnes:', err));
-  </script>
 </body>
 </html>

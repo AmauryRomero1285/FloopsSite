@@ -121,8 +121,8 @@
           </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="products-grid">
-          <!-- Tarjetas inyectadas aquí -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="fruit-grid">
+          <!-- Tarjetas inyectadas -->
         </div>
       </section>
     </main>
@@ -134,15 +134,5 @@
   <script src="../../common/js/global-search.js"></script>
   <script src="/src/common/utils/helpers.js"></script>
   <script src="../../common/js/product-utils.js"></script>
-
-  <!-- Cargar productos de la categoría "frutas" -->
-  <script>
-    fetch('../../common/data/products.json')
-      .then(res => res.json())
-      .then(data => {
-        renderProducts('#products-grid', data.frutas.products);
-      })
-      .catch(err => console.error('Error cargando productos de frutas:', err));
-  </script>
 </body>
 </html>

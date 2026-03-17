@@ -1,145 +1,97 @@
 // product-utils.js
 
+// 1. Función para cargar el template externo e insertarlo en el DOM
+async function loadExternalTemplate(path) {
+  try {
+    const response = await fetch(path);
+    const text = await response.text();
+    const parser = new DOMParser();
+    const doc = parser.parseFromString(text, 'text/html');
+    const template = doc.querySelector('#product-card-template');
+    
+    if (template) {
+      document.body.appendChild(template);
+      return true;
+    }
+    return false;
+  } catch (err) {
+    console.error("Error cargando el archivo del template:", err);
+    return false;
+  }
+}
+
 function formatPrice(num) {
-  return new Intl.NumberFormat("es-ES", {
-    style: "currency",
-    currency: "EUR",
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  }).format(num);
+  return new Intl.NumberFormat("es-ES", { style: "currency", currency: "EUR" }).format(num);
 }
 
-// ==============================
-// Crear card de producto
-// ==============================
 function createProductCard(product) {
-  const {
-    id,
-    name,
-    price,
-    unit = "unidad",
-    image,
-    category = "Categoría",
-  } = product;
+  const template = document.getElementById("product-card-template");
+  if (!template) return null;
 
-  const formattedPrice = formatPrice(price);
+  const clone = template.content.cloneNode(true);
+  const card = clone.querySelector(".product-card");
 
-  const template = document.createElement("template");
+  // Mapeo de clases
+  const imgElement = card.querySelector(".product-img img");
+  if (imgElement) imgElement.src = product.image;
+  
+  card.querySelector(".category").textContent = product.category || "General";
+  card.querySelector(".name").textContent = product.name;
+  card.querySelector(".price").textContent = formatPrice(product.price);
+  card.querySelector(".unit").textContent = `/ ${product.unit || 'unidad'}`;
 
-  template.innerHTML = `
-  <div
-    class="bg-primary dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-100 dark:border-slate-700 hover:shadow-xl transition-all group flex flex-col h-full"
-    data-product-id="${id}"
-    data-name="${name}"
-    data-price="${price}"
-    data-unit="${unit}"
-    data-image="${image}"
-    data-category="${category}"
-  >
+  // Dataset para el carrito
+  card.dataset.productId = product.id;
+  card.dataset.name = product.name;
+  card.dataset.price = product.price;
 
-    <div class="relative h-48 bg-slate-100">
-      <img src="${image}" class="w-full h-full object-cover"/>
-    </div>
-
-    <div class="p-4 flex flex-col flex-1">
-
-      <p class="text-xs text-slate-400 mb-1">${category}</p>
-
-      <h3 class="font-bold mb-2">
-        ${name}
-      </h3>
-
-      <div class="mt-auto">
-
-        <span class="text-xl font-bold">
-          ${formattedPrice}
-        </span>
-
-        <button
-          class="add-to-cart-btn w-full mt-3 py-3 bg-slate-100 hover:bg-primary hover:text-white rounded-xl font-bold flex justify-center gap-2"
-        >
-          <span class="material-symbols-outlined">add_shopping_cart</span>
-          Añadir
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-  `;
-
-  return template.content.firstElementChild;
+  return card;
 }
 
-// ==============================
-// Renderizar productos
-// ==============================
 function renderProducts(containerSelector, products) {
   const container = document.querySelector(containerSelector);
   if (!container) return;
-
   container.innerHTML = "";
-
-  products.forEach((product) => {
-    const card = createProductCard(product);
-    container.appendChild(card);
+  products.forEach(p => {
+    const card = createProductCard(p);
+    if (card) container.appendChild(card);
   });
 }
 
-// ==============================
-// Añadir producto al carrito
-// ==============================
-function handleAddToCart(btn) {
-  const card = btn.closest("[data-product-id]");
-  if (!card) return;
+// 2. Cargar Template & JSON -> Renderizar
+document.addEventListener("DOMContentLoaded", async () => {
+  const isDeep = window.location.pathname.split('/').filter(Boolean).length >= 2;
 
-  const product = {
-    id: card.dataset.productId,
-    name: card.dataset.name,
-    price: parseFloat(card.dataset.price),
-    image: card.dataset.image,
-    quantity: 1,
-  };
+  const TEMPLATE_PATH = isDeep 
+    ? '../../common/components/ui/product-card.html' 
+    : '../common/components/ui/product-card.html';
+    
+  const JSON_PATH = isDeep 
+    ? '../../common/data/products.json' 
+    : '../common/data/products.json';
 
-  let cart = JSON.parse(localStorage.getItem("cart") || "[]");
+  const templateLoaded = await loadExternalTemplate(TEMPLATE_PATH);
 
-  const existing = cart.find((item) => item.id === product.id);
+  if (templateLoaded) {
+    fetch(JSON_PATH)
+      .then(res => {
+        if (!res.ok) throw new Error("No se encontró el JSON");
+        return res.json();
+      })
+      .then(data => {
+        const fruitGrid = document.querySelector('#fruit-grid');
+        const meatGrid = document.querySelector("#meat-grid");
 
-  if (existing) {
-    existing.quantity += 1;
+        if (fruitGrid && data?.frutas?.products) {
+          renderProducts('#fruit-grid', data.frutas.products);
+        }
+        if (meatGrid && data?.carnes?.products) {
+          renderProducts('#meat-grid', data.carnes.products);
+        }
+      })
+      .catch(err => console.error("Error en la carga de productos:", err));
   } else {
-    cart.push(product);
+    console.error("Error crítico: No se pudo cargar el template desde:", TEMPLATE_PATH);
   }
-
-  localStorage.setItem("cart", JSON.stringify(cart));
-
-  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-  localStorage.setItem("cartItemCount", totalItems);
-
-  const original = btn.innerHTML;
-
-  btn.innerHTML = "✔ Añadido";
-  btn.classList.add("bg-green-600", "text-white");
-
-  setTimeout(() => {
-    btn.innerHTML = original;
-    btn.classList.remove("bg-green-600", "text-white");
-  }, 1200);
-
-  document.dispatchEvent(new CustomEvent("cart:updated"));
-}
-
-// ==============================
-// Delegación de eventos
-// ==============================
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".add-to-cart-btn");
-
-  if (!btn) return;
-
-  e.preventDefault();
-  e.stopPropagation();
-
-  handleAddToCart(btn);
 });
+
